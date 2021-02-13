@@ -3,6 +3,7 @@
 
 import pyttsx3  # Library for speak and listen features
 import datetime  # Library for date and time related function
+import speech_recognition as sr
 
 engine = pyttsx3.init('sapi5')
 voices = engine.getProperty('voices')
@@ -29,6 +30,13 @@ def wishMe():
 
     speak("I am your virtual assistant, How may I help you")
 
+def takeCommand():
+#It takes command from user via speakers or microphone and returns string output
+    r = sr.Recognizer
+    with sr.Microphone() as source:
+        print("listening......")
+    
+
 
 if __name__ == "__main__":
-    speak("Hello How are you & what can i do for you")
+    wishMe()
