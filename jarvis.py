@@ -30,8 +30,9 @@ def wishMe():
 
     speak("I am your virtual assistant, How may I help you")
 
+
 def takeCommand():
-#It takes command from user via speakers or microphone and returns string output
+    # It takes command from user via speakers or microphone and returns string output
     r = sr.Recognizer
     with sr.Microphone() as source:
         print("listening......")
@@ -41,7 +42,13 @@ def takeCommand():
     try:
         print("recognizing")
         query = r.recognize_google(audio, language="en-in")
-        print("user")
+        print(f"user {query}")
+
+    except Exception as e:
+        #  print(e)
+
+        print("Say that again Please")
+        return "None"
 
 
 if __name__ == "__main__":
