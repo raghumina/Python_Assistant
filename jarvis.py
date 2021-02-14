@@ -7,7 +7,7 @@ import speech_recognition as sr
 
 engine = pyttsx3.init('sapi5')
 voices = engine.getProperty('voices')
-print(voices[0].id)
+#print(voices[0].id)
 
 engine.setProperty('voices', voices[0].id)
 
@@ -49,7 +49,8 @@ def takeCommand():
 
         print("Say that again Please")
         return "None"
-
+    return query
 
 if __name__ == "__main__":
     wishMe()
+    takeCommand()
